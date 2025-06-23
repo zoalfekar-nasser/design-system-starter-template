@@ -1,0 +1,33 @@
+/*! purgecss start ignore */
+:where(*, ::before, ::after) {
+  box-sizing: border-box;
+}
+
+:where(ul[class]) {
+  padding: 0;
+  list-style: none;
+}
+
+:where(h1, h2, h3, h4, p, body) {
+  margin: 0;
+}
+
+:where(button) {
+  border: none;
+  cursor: pointer;
+}
+
+:where(img,picture) {
+  display: block;
+  max-width: 100%;
+}
+
+:where(a) {
+  display: inline-block;
+}
+
+:where(input, button) {
+  font-family: inherit;
+  font-size: inherit;
+}
+/*! purgecss end ignore */

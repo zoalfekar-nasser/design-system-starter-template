@@ -1,0 +1,12 @@
+@use "../abstracts/" as *;
+
+:where(html) {
+  scroll-behavior: smooth;
+  scroll-padding-top: 3rem;
+}
+
+:where(body) {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-400);
+}

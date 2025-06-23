@@ -1,0 +1,40 @@
+@use "sass:map";
+@use "sass:meta";
+@use "sass:math";
+@use "breakpoints" as *;
+@use "typography" as *;
+@use "spacing" as *;
+
+@function validate-breakpoint($breakpoint) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @return map.get($breakpoints, $breakpoint);
+  } @else {
+    @if meta.type-of($breakpoint) == number and math.is-unitless($breakpoint) {
+      @error "The number you entered |'#{$breakpoint}'| is unitless";
+    } @else if
+      meta.type-of($breakpoint) ==
+      number and not
+      math.is-unitless($breakpoint)
+    {
+      @return $breakpoint;
+    } @else {
+      @error "The breakpoint you entered |`#{$breakpoint}`| is not exist in the breakpoints map, the breakpoints are : #{map.keys($breakpoints)}";
+    }
+  }
+}
+
+@function getMapValue($name: "Value", $map, $key...) {
+  @if map.has-key($map, $key...) {
+    @return map.get($map, $key...);
+  } @else {
+    @error "This #{$name} '#{$key}' is not available  ";
+  }
+}
+
+@function fs($font-size...) {
+  @return getMapValue("font-size", $font-sizes, $font-size...);
+}
+
+@function space($space...) {
+  @return getMapValue("space", $spaces, $space...);
+}
