@@ -1,0 +1,12 @@
+@use "globals" as *;
+
+//! Layout
+$wrapper-width: min(var(--wrapper-width, $global-wrapper-width), 100%);
+
+$section-padding: var(--section-padding, $global-section-padding);
+
+$flow-spacer: var(--flow-spacer, $global-flow-spacer);
+
+$flex-gap: var(--flex-gap, $global-flex-gap);
+
+$grid-gap: var(--grid-gap, $global-grid-gap);

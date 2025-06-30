@@ -2,7 +2,7 @@
 @use "../abstracts/" as *;
 
 .wrapper {
-  width: min(var(--wrapper-size, var(--main-wrapper-size, 25rem)), 100%);
+  width: $wrapper-width;
   padding-inline: space(base);
   margin-inline: auto;
 

@@ -3,7 +3,6 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
 import htmlPurge from "vite-plugin-purgecss";
-import stylelint from "vite-plugin-stylelint";
 import { createHtmlPlugin } from "vite-plugin-html";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 
@@ -52,7 +51,5 @@ export default defineConfig({
       jpeg: { quality: 80 },
       jpg: { quality: 80 },
     }),
-
-    stylelint({ fix: true }),
   ],
 });

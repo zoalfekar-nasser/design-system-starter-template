@@ -2,16 +2,24 @@
 @use "../abstracts/" as *;
 
 :root {
-  --ff-primary: #{$ff-primary};
-  --ff-secondary: #{$ff-secondary};
-  --fs-base: #{fs(base)};
-  --fw-400: #{$fw-400};
   --main-wrapper-size: 1200px;
-  --section-padding: #{space(xl)};
+  --main-section-padding: 5rem;
 
-  @each $color-name, $color-shades in $colors {
-    @each $color-shade, $color-value in $color-shades {
-      --clr-#{$color-name}-#{$color-shade}: #{$color-value};
+  // --- 1. Generate standard, non-responsive properties ---
+
+  @include generate-props-from-map($colors, "clr");
+  @include generate-props-from-map($font-families, "ff");
+  @include generate-props-from-map($font-weights, "fw");
+  @include generate-props-from-map($globals, "gl");
+  // --- 2. Generate responsive properties ---
+  @each $breakpoint-name, $size-map in $font-sizes {
+    @if $breakpoint-name == "small" {
+      @include generate-props-from-map($size-map, "fs");
+    } @else {
+      // For all other breakpoints, we use the media query mixin.
+      @include media-min($breakpoint-name) {
+        @include generate-props-from-map($size-map, "fs");
+      }
     }
   }
 }

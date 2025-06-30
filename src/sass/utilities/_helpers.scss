@@ -1,4 +1,5 @@
 @use "../abstracts/" as *;
+@use "../base/" as *;
 
 .text-center {
   text-align: center;
@@ -9,7 +10,7 @@
 }
 
 .section-padding {
-  padding-block: var(--main-section-padding, --section-padding);
+  padding-block: $section-padding;
 }
 
 .normal-text {
@@ -24,17 +25,17 @@
 
 .flow {
   &[data-spacing="small"] {
-    --flow-spacer: #{space(s)};
+    --flow-spacer: $space-s;
   }
   &[data-spacing="medium"] {
-    --flow-spacer: #{space(m)};
+    --flow-spacer: $space-m;
   }
   &[data-spacing="large"] {
-    --flow-spacer: #{space(l)};
+    --flow-spacer: $space-l;
   }
 
   > * + * {
-    margin-block-start: var(--flow-spacer, space(base));
+    margin-block-start: $flow-spacer;
   }
 }
 

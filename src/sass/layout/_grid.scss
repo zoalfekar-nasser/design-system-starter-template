@@ -1,0 +1,9 @@
+@use "../abstracts/" as *;
+.grid {
+  display: grid;
+  gap: $grid-gap;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(var(--min-col-size, 200px), 100%), 1fr)
+  );
+}

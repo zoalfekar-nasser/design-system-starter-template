@@ -1,7 +1,7 @@
 @use "spacing" as *;
-@use "functions" as *;
+@use "tokens" as *;
 
 %flex {
   display: flex;
-  gap: var(--gap, space(base));
+  gap: $flex-gap;
 }
