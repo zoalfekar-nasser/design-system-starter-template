@@ -1,9 +1,15 @@
 @use "../abstracts/" as *;
-.grid {
-  display: grid;
-  gap: $grid-gap;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(min(var(--grid-min-col-width, $grid-min-col-width-default), 100%), 1fr)
-  );
+
+.#{$prefix} {
+  &grid {
+    display: grid;
+    gap: $grid-gap;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(
+        min(var(--grid-min-col-width, $grid-min-col-width-default), 100%),
+        1fr
+      )
+    );
+  }
 }

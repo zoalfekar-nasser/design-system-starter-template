@@ -1,38 +1,40 @@
 @use "../abstracts/" as *;
 
-.form {
-  &__content {
-    display: grid;
-    gap: $form-content-gap;
-    grid-template-columns: $form-content-columns-mobile;
+.#{$prefix} {
+  &form {
+    &__content {
+      display: grid;
+      gap: $form-content-gap;
+      grid-template-columns: $form-content-columns-mobile;
 
-    @include media-min(small) {
-      grid-template-columns: $form-content-columns-desktop;
-    }
-  }
-
-  &__input-box {
-    display: grid;
-    gap: $form-input-box-gap;
-
-    input {
-      padding: $form-input-padding;
-      border: $form-input-border;
-      border-radius: $form-input-border-radius;
-      outline-color: transparent;
-      transition: outline $transition-2;
-      &::placeholder {
-        color: $form-input-placeholder-color;
-      }
-
-      &:focus {
-        outline-color: $form-input-border-color-hover;
+      @include media-min(small) {
+        grid-template-columns: $form-content-columns-desktop;
       }
     }
 
-    label {
-      text-align: left;
-      font-weight: $form-label-font-weight;
+    &__input-box {
+      display: grid;
+      gap: $form-input-box-gap;
+
+      input {
+        padding: $form-input-padding;
+        border: $form-input-border;
+        border-radius: $form-input-border-radius;
+        outline-color: transparent;
+        transition: outline $transition-2;
+        &::placeholder {
+          color: $form-input-placeholder-color;
+        }
+
+        &:focus {
+          outline-color: $form-input-border-color-hover;
+        }
+      }
+
+      label {
+        text-align: left;
+        font-weight: $form-label-font-weight;
+      }
     }
   }
 }

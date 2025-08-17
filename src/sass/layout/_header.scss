@@ -1,33 +1,36 @@
 @use "../abstracts/" as *;
 
-.header {
-  background-color: $header-background-color;
-  padding-block: $header-padding-block;
-  font-family: $header-font-family;
-  letter-spacing: $header-letter-spacing;
-  // position: relative;
-  &__content {
-    @include flex(center, center, $clamp-space-l, column) {
-      @include media-min(medium) {
-        justify-content: space-between;
-        flex-direction: row;
+.#{$prefix} {
+  &header {
+    background-color: $header-background-color;
+    padding-block: $header-padding-block;
+    font-family: $header-font-family;
+    letter-spacing: $header-letter-spacing;
+    // position: relative;
+    &__content {
+      @include flex(center, center, $clamp-space-l, column) {
+        @include media-min(medium) {
+          justify-content: space-between;
+          flex-direction: row;
+        }
       }
     }
   }
 }
 
-.navigation {
-  &__links {
-    @include flex(center, center) {
-      gap:$clamp-space-s $clamp-space-l ;
-      flex-wrap: wrap;
+.#{$prefix} {
+  &navigation {
+    &__links {
+      @include flex(center, center) {
+        gap: $clamp-space-s $clamp-space-l;
+        flex-wrap: wrap;
+      }
+    }
+
+    &__link {
+      font-weight: $header-navigation-links-font-weight;
+      color: $header-navigation-links-color;
+      text-transform: $header-navigation-links-transform;
     }
   }
-
-  &__link {
-    font-weight: $header-navigation-links-font-weight;
-    color: $header-navigation-links-color;
-    text-transform: $header-navigation-links-transform;
-  }
-
 }
