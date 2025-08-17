@@ -120,8 +120,6 @@ $services-card-background-color: var(--card-bg, $body-background-color);
 
 $services-card-text-color: var(--card-text, $body-text-color);
 
-
-
 //!Headings
 
 $heading-text-color-default: $color-primary-700;
@@ -155,6 +153,16 @@ $flow-large-space: $clamp-space-l;
 
 //! Forms
 
+//* From Content Styles
+
+$from-content-gap: $clamp-space-base;
+
+$form-content-columns-mobile: 1fr;
+
+$form-content-columns-desktop: 1fr 1fr;
+
+//* input-box & input & labels Styles
+
 $form-input-padding: $clamp-space-xs;
 
 $form-input-border: 2px $color-primary-200 solid;
@@ -168,7 +176,6 @@ $form-input-placeholder-color: $color-primary-300;
 $form-label-font-weight: $font-weight-700;
 
 $form-input-box-gap: $clamp-space-xxs;
-
 
 //! Theme Switcher & Theme List & Theme Button
 
