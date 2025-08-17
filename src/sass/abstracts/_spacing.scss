@@ -1,6 +1,6 @@
 @use "functions" as *;
 
-$spaces: (
+$clamp-spaces: (
   "xxs": clamp(0.25rem, 0.2375rem + 0.0625vw, 0.3125rem),
   "xs": clamp(0.5rem, 0.475rem + 0.125vw, 0.625rem),
   "s": clamp(0.75rem, 0.7125rem + 0.1875vw, 0.9375rem),

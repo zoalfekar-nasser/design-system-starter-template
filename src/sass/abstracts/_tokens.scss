@@ -157,7 +157,7 @@ $flow-large-space: $clamp-space-l;
 
 //* From Content Styles
 
-$from-content-gap: $clamp-space-base;
+$form-content-gap: $clamp-space-base;
 
 $form-content-columns-mobile: 1fr;
 
@@ -190,7 +190,7 @@ $theme-margin-block-start: $fixed-space-1;
 $theme-list-border-radius: $border-radius-1 $border-radius-1 $border-radius-2
   $border-radius-2;
 
-$theme-list-box-shadow: $shadow-2;
+$theme-list-box-shadow: $box-shadow-2;
 
 $heme-list-gap-between: $fixed-space-1;
 
@@ -212,7 +212,7 @@ $header-logo-link-color: $color-primary-300;
 
 $header-font-family: $font-family-secondary;
 
-$header-background-color: $color-header-footer;
+$header-background-color: $color-primary-300;
 
 $header-padding-block: $clamp-space-m;
 
@@ -227,6 +227,6 @@ $header-navigation-links-font-weight: $font-weight-700;
 $header-navigation-gap-between: $clamp-space-base;
 //? Footer
 
-$footer-background-color: $color-header-footer;
+$footer-background-color: $color-primary-300;
 
 $footer-text-color: $color-primary-200;
