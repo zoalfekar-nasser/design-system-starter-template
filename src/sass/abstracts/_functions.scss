@@ -4,8 +4,8 @@
 @use "breakpoints" as *;
 
 @function validate-breakpoint($breakpoint) {
-  @if map.has-key($breakpoints, $breakpoint) {
-    @return map.get($breakpoints, $breakpoint);
+  @if map.has-key($breakpoints-map, $breakpoint) {
+    @return map.get($breakpoints-map, $breakpoint);
   } @else {
     @if meta.type-of($breakpoint) == number and math.is-unitless($breakpoint) {
       @error "The number you entered |'#{$breakpoint}'| is unitless";
@@ -16,15 +16,15 @@
     {
       @return $breakpoint;
     } @else {
-      @error "The breakpoint you entered |`#{$breakpoint}`| is not exist in the breakpoints map, the breakpoints are : #{map.keys($breakpoints)}";
+      @error "The breakpoint you entered |`#{$breakpoint} and its's type is '#{meta.type-of($breakpoint)} '`| is not exist in the breakpoints map, the breakpoints are : #{map.keys($breakpoints)}, and also is not a unit number ex: {30em} ";
     }
   }
 }
 
-@function getMapValue($name: "Value", $map, $key...) {
+@function getMapValue($key-name: "Key", $map, $key...) {
   @if map.has-key($map, $key...) {
     @return map.get($map, $key...);
   } @else {
-    @error "This #{$name} '#{$key}' is not available  ";
+    @error "This #{$key-name} '#{$key}' is not available  ";
   }
 }

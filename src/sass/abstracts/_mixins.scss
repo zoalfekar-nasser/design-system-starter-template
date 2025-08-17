@@ -29,39 +29,6 @@
   }
 }
 
-// @mixin generateCustomProperties(  //! My Mixin, I must learn about recursive to simplify the mixin
-//   $prefix: "cp",
-//   $map,
-//   $nested: false,
-//   $is-there-media-queries: false
-// ) {
-//   @if $is-there-media-queries == true {
-//     @each $media, $nested-map in $map {
-//       @if $media == "small" {
-//         @each $custom-property-name, $custom-property-value in $nested-map {
-//           --#{$prefix}-#{$custom-property-name}: #{$custom-property-value};
-//         }
-//       } @else {
-//         @include media-min($media) {
-//           @each $custom-property-name, $custom-property-value in $nested-map {
-//             --#{$prefix}-#{$custom-property-name}: #{$custom-property-value};
-//           }
-//         }
-//       }
-//     }
-//   } @else if ($nested and $is-there-media-queries == false) {
-//     @each $nested-map-name, $nested-map-value in $map {
-//       @each $custom-property-name, $custom-property-value in $nested-map-value {
-//         --#{$prefix}-#{$nested-map-name}-#{$custom-property-name}: #{$custom-property-value};
-//       }
-//     }
-//   } @else {
-//     @each $custom-property-name, $custom-property-value in $map {
-//       --#{$prefix}-#{$custom-property-name}: #{$custom-property-value};
-//     }
-//   }
-// }
-
 @mixin generate-props-from-map($map, $prefix: "") { //! Enhanced Version from the mixin done by AI with Recursive 
   @each $key, $value in $map {
     // We construct the new key for the property.
@@ -79,4 +46,22 @@
       --#{$new-key}: #{$value};
     }
   }
+}
+
+@mixin flex($justify: false, $align: false, $gap: $flex-gap, $dir: false) {
+  display: flex;
+  gap: $gap;
+
+  @if $justify {
+    justify-content: $justify;
+  }
+
+  @if $align {
+    align-items: $align;
+  }
+
+  @if $dir {
+    flex-direction: $dir;
+  }
+  @content;
 }

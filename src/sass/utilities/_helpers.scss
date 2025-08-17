@@ -24,14 +24,14 @@
 }
 
 .flow {
-  &[data-spacing="small"] {
-    --flow-spacer: $space-s;
+  &[data-flow="small"] {
+    --flow-spacer: #{$flow-small-space};
   }
-  &[data-spacing="medium"] {
-    --flow-spacer: $space-m;
+  &[data-flow="medium"] {
+    --flow-spacer: #{$flow-medium-space};
   }
-  &[data-spacing="large"] {
-    --flow-spacer: $space-l;
+  &[data-flow="large"] {
+    --flow-spacer: #{$flow-large-space};
   }
 
   > * + * {
@@ -52,4 +52,12 @@
   &:focus-visible {
     top: 0; /* Move it into view */
   }
+}
+
+.radius-1 {
+  border-radius: $border-radius-1;
+}
+
+.radius-2 {
+  border-radius: $border-radius-2;
 }

@@ -1,0 +1,36 @@
+@use "../abstracts/" as *;
+
+.heading-title {
+  font-family: $heading-font-family;
+  font-weight: $heading-font-weight;
+  font-size: var(--heading-fs, revert);
+  color: var(--heading-color, $heading-text-color-default);
+  letter-spacing: $heading-letter-spacing;
+  text-transform: $heading-text-transform;
+
+  &[data-heading="main"] {
+    --heading-color: #{$main-heading-color};
+    --heading-fs: #{$main-heading-font-size};
+  }
+
+  &[data-heading="section"] {
+    --heading-color: #{$section-heading-color};
+    --heading-fs: #{$section-heading-font-size};
+  }
+
+  &[data-heading="card-1"] {
+    --heading-color: #{$card-1-heading-color};
+    --heading-fs: #{$card-1-heading-font-size};
+  }
+  &[data-heading="card-2"] {
+    --heading-color: #{$card-2-heading-color};
+    --heading-fs: #{$card-2-heading-font-size};
+  }
+}
+
+
+.heading-subtitle {
+  font-size: $heading-subtitle-font-size;
+  margin-top: $heading-subtitle-margin;
+  margin-inline: auto;
+}

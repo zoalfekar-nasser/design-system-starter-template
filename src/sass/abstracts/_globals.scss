@@ -1,15 +1,19 @@
 @use "spacing" as *;
 
-$globals: (
-  "section-padding": $space-xl,
-  "wrapper-width": 1200px,
-  "flow-spacer": $space-base,
-  "flex-gap": $space-base,
-  "grid-gap": $space-m,
+$globals-map: (
+  "section-padding": $clamp-space-xl,
+  "wrapper-width": 1100px,
+  "flow-spacer": $clamp-space-base,
+  "flex-gap": $clamp-space-base,
+  "grid-gap": $clamp-space-m,
 );
 
 $global-section-padding: var(--gl-section-padding, 3.5rem);
+
 $global-wrapper-width: var(--gl-wrapper-width, 25rem);
-$global-flow-spacer: var(--gl-flow-spacer, 1rem);
+
+$global-flow-spacer: var(--gl-flow-spacer, 1em);
+
 $global-flex-gap: var(--gl-flex-gap, 1rem);
+
 $global-grid-gap: var(--gl-grid-gap, 1rem);

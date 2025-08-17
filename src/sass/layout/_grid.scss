@@ -4,6 +4,6 @@
   gap: $grid-gap;
   grid-template-columns: repeat(
     auto-fit,
-    minmax(min(var(--min-col-size, 200px), 100%), 1fr)
+    minmax(min(var(--grid-min-col-width, $grid-min-col-width-default), 100%), 1fr)
   );
 }

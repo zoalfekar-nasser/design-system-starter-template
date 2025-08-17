@@ -2,23 +2,43 @@
 @use "../abstracts/" as *;
 
 :root {
-  --main-wrapper-size: 1200px;
-  --main-section-padding: 5rem;
-
   // --- 1. Generate standard, non-responsive properties ---
 
-  @include generate-props-from-map($colors, "clr");
-  @include generate-props-from-map($font-families, "ff");
-  @include generate-props-from-map($font-weights, "fw");
-  @include generate-props-from-map($globals, "gl");
+  // @include generate-props-from-map($colors-map, "clr");
+  @include generate-props-from-map($font-families-map, "ff");
+  @include generate-props-from-map($font-weights-map, "fw");
+  @include generate-props-from-map($globals-map, "gl");
+  @include generate-props-from-map($font-sizes-map, "fs");
   // --- 2. Generate responsive properties ---
-  @each $breakpoint-name, $size-map in $font-sizes {
-    @if $breakpoint-name == "small" {
-      @include generate-props-from-map($size-map, "fs");
-    } @else {
-      // For all other breakpoints, we use the media query mixin.
-      @include media-min($breakpoint-name) {
-        @include generate-props-from-map($size-map, "fs");
+  // @each $breakpoint-name, $font-size-map in $font-sizes-map {
+  //   @if $breakpoint-name == "small" {
+  //     @include generate-props-from-map($font-size-map, "fs");
+  //   } @else {
+  //     // For all other breakpoints, we use the media query mixin.
+  //     @include media-min($breakpoint-name) {
+  //       @include generate-props-from-map($font-size-map, "fs");
+  //     }
+  //   }
+  // }
+
+  //! Themes Handling
+  @each $theme-name, $theme-map in $themes-map {
+    &[data-theme="#{$theme-name}"] {
+      @include generate-props-from-map($theme-map, "clr");
+    }
+  }
+
+  @media (prefers-color-scheme: light) {
+    @each $theme-name, $theme-map in $themes-map {
+      @if ($theme-name == "default") {
+        @include generate-props-from-map($theme-map, "clr");
+      }
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    @each $theme-name, $theme-map in $themes-map {
+      @if ($theme-name == "dark") {
+        @include generate-props-from-map($theme-map, "clr");
       }
     }
   }
