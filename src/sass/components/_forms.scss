@@ -1,7 +1,7 @@
 @use "../abstracts/" as *;
 
-.#{$prefix} {
-  &form {
+
+  .form {
     &__content {
       display: grid;
       gap: $form-content-gap;
@@ -37,4 +37,4 @@
       }
     }
   }
-}
+

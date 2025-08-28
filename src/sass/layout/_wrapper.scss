@@ -1,20 +1,17 @@
-@use "../base/" as *;
 @use "../abstracts/" as *;
 
-.#{$prefix} {
-  &wrapper {
-    width: $wrapper-width;
-    padding-inline: $wrapper-padding-inline;
-    margin-inline: auto;
+.wrapper {
+  width: $wrapper-width;
+  padding-inline: $wrapper-padding-inline;
+  margin-inline: auto;
 
-    &[data-wrapper="small"] {
-      --wrapper-width: 650px;
-    }
-    &[data-wrapper="extended"] {
-      --wrapper-width: 1440px;
-    }
-    &[data-wrapper="full"] {
-      --wrapper-width: 100%;
-    }
+  &[data-wrapper="small"] {
+    --wrapper-width: 650px;
+  }
+  &[data-wrapper="extended"] {
+    --wrapper-width: 1440px;
+  }
+  &[data-wrapper="full"] {
+    --wrapper-width: 100%;
   }
 }

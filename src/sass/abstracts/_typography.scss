@@ -4,7 +4,7 @@
 
 $font-families-map: (
   "primary": "system-ui",
-  "secondary": '"Alegreya SC", serif',
+  "secondary": "serif",
 );
 
 $font-sizes-map: (
@@ -54,9 +54,11 @@ $font-weights-map: (
 @function ff($font-family...) {
   @return getMapValue("font-family", $font-families, $font-family...);
 }
+
 @function fs($font-size...) {
   @return getMapValue("font-size", $font-sizes, $font-size...);
 }
+
 @function fw($font-weight...) {
   @return getMapValue("font-weight", $font-weights, $font-weight...);
 }
@@ -68,7 +70,6 @@ $font-family-secondary:var(--ff-secondary);
 
 
 //? Font Sizes
-$font-size-xs: var(--fs-xs);
 $font-size-s: var(--fs-s);
 $font-size-base: var(--fs-base);
 $font-size-m: var(--fs-m);

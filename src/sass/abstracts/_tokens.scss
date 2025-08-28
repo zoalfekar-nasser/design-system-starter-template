@@ -73,13 +73,17 @@ $grid-gap: var(--grid-gap, $global-grid-gap);
 
 //!Buttons
 
-$button-background-color: var(--btn-bg, $color-primary-700);
+$button-background-color: var(--btn-bg, transparent);
 
-$button-text-color: var(--btn-text, $color-primary-100);
+$button-text-color: var(--btn-text, $color-primary-700);
 
-$button-padding: $fixed-space-3 $fixed-space-8;
+$button-background-color-hover: var(--btn-bg-hover, $color-neutral-100);
 
-$button-font-weight: $font-weight-700;
+$button-text-color-hover: var(--btn-text-hover, $color-primary-700);
+
+$button-padding: $clamp-space-s $clamp-space-m;
+
+$button-font-weight: $font-weight-400;
 
 $button-transition: $transition-1;
 

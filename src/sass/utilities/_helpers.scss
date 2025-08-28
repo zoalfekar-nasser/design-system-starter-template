@@ -1,5 +1,4 @@
 @use "../abstracts/" as *;
-@use "../base/" as *;
 
 .text-center {
   text-align: center;
@@ -15,8 +14,9 @@
 
 .normal-text {
   color: var(--p-color, var(--clr-neutral-500));
-  line-height: 1.5;
-  text-wrap: pretty;
+  // line-height: $paragraph-line-height;
+  // text-wrap: $paragraph-text-wrap;
+  // max-width: $paragraph-max-width;
 }
 
 .mi-auto {
@@ -52,6 +52,18 @@
   &:focus-visible {
     top: 0; /* Move it into view */
   }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px; /* Avoids strange artifacts in some layouts */
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* Prevents line breaks from affecting layout */
+  border: 0;
 }
 
 .radius-1 {

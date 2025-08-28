@@ -1,7 +1,7 @@
 @use "../abstracts/" as *;
 
-.#{$prefix} {
-  &heading-title {
+
+  .heading-title {
     font-family: $heading-font-family;
     font-weight: $heading-font-weight;
     font-size: var(--heading-fs, revert);
@@ -28,12 +28,12 @@
       --heading-fs: #{$card-2-heading-font-size};
     }
   }
-}
 
-.#{$prefix} {
-  &heading-subtitle {
+
+
+  .heading-subtitle {
     font-size: $heading-subtitle-font-size;
     margin-top: $heading-subtitle-margin;
     margin-inline: auto;
   }
-}
+

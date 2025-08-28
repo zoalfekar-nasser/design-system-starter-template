@@ -1,15 +1,13 @@
 @use "../abstracts/" as *;
 
-.#{$prefix} {
-  &grid {
-    display: grid;
-    gap: $grid-gap;
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(
-        min(var(--grid-min-col-width, $grid-min-col-width-default), 100%),
-        1fr
-      )
-    );
-  }
+.grid {
+  display: grid;
+  gap: $grid-gap;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(
+      min(var(--grid-min-col-width, $grid-min-col-width-default), 100%),
+      1fr
+    )
+  );
 }

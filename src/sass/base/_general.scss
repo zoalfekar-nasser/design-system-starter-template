@@ -21,7 +21,7 @@
 }
 
 :where(button, a) {
-  display: inline-flex;
+  display: inline-block;
 }
 
 :where(img, picture, svg, video) {

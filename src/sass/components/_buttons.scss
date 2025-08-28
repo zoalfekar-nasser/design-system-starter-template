@@ -1,38 +1,36 @@
 @use "../abstracts/" as *;
-@use "../base/" as *;
 
-.#{$prefix} {
-  &buttons {
-    @include flex() {
-      flex-wrap: wrap;
-    }
+.buttons {
+  @include flex() {
+    flex-wrap: wrap;
   }
 }
 
-.#{$prefix} {
-  &button {
-    background-color: $button-background-color;
-    color: $button-text-color;
-    padding: $button-padding;
-    font-weight: $button-font-weight;
-    border-radius: $button-border-radius;
-    transition: background 0.3s, color 0.3s;
+.button {
+  background-color: $button-background-color;
+  color: $button-text-color;
+  padding: $button-padding;
+  font-weight: $button-font-weight;
+  border-radius: $button-border-radius;
+  transition: background 0.3s, color 0.3s;
 
-    &[data-button="primary"] {
-      --btn-text: #{$button-primary-text-color};
-      --btn-bg: #{$button-primary-background-color};
-      &:is(:hover, :focus-visible) {
-        --btn-bg: #{$button-primary-background-color-hover};
+  &:is(:hover, :focus-visible) {
+    background-color: $button-background-color-hover;
+    color: $button-text-color-hover;
+  }
 
-        // background-color: $button-primary-background-hover;
-      }
-    }
-    &[data-button="accent"] {
-      --btn-text: #{$button-accent-text-color};
-      --btn-bg: #{$button-accent-background-color};
-      &:is(:hover, :focus-visible) {
-        --btn-bg: #{$button-accent-background-color-hover};
-      }
-    }
+  &[data-button="primary"] {
+    --btn-text: #{$button-primary-text-color};
+    --btn-bg: #{$button-primary-background-color};
+
+    --btn-bg-hover: #{$button-primary-background-color-hover};
+    --btn-text-hover: #{$button-primary-text-color-hover};
+  }
+  &[data-button="accent"] {
+    --btn-text: #{$button-accent-text-color};
+    --btn-bg: #{$button-accent-background-color};
+
+    --btn-bg-hover: #{$button-accent-background-color-hover};
+    --btn-text-hover: #{$button-accent-text-color-hover};
   }
 }
