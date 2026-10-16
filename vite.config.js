@@ -2,8 +2,6 @@
 
 import { resolve } from "path";
 import { defineConfig } from "vite";
-import htmlPurge from "vite-plugin-purgecss";
-import { createHtmlPlugin } from "vite-plugin-html";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 
 export default defineConfig({
@@ -34,18 +32,6 @@ export default defineConfig({
   // The plugins array.
 
   plugins: [
-    htmlPurge({
-      paths: ["./src/**/*.{html,js,vue,jsx,tsx}"],
-      safelist: {
-        // Or use greedy matching for more comprehensive coverage
-        greedy: [/where/],
-      },
-    }),
-
-    createHtmlPlugin({
-      minify: true,
-    }),
-
     ViteImageOptimizer({
       png: { quality: 80 },
       jpeg: { quality: 80 },
